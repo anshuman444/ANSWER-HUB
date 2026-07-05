@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  --color-primary-50: #faf5ff;
+  --color-primary-100: #f3e8ff;
+  --color-primary-200: #e9d5ff;
+  --color-primary-300: #d8b4fe;
+  --color-primary-400: #c084fc;
+  --color-primary-500: #a855f7;
+  --color-primary-600: #9333ea;
+  --color-primary-700: #7e22ce;
+  --color-primary-800: #6b21a8;
+  --color-primary-900: #581c87;
+  --color-primary-950: #0f051d;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Elegant Cosmic Particles & Neon Glow Systems */
+@keyframes neon-pulse-indigo {
+  0%, 100% { box-shadow: 0 0 15px rgba(99, 102, 241, 0.15); border-color: rgba(99, 102, 241, 0.2); }
+  50% { box-shadow: 0 0 28px rgba(99, 102, 241, 0.35); border-color: rgba(99, 102, 241, 0.4); }
+}
+
+@keyframes neon-pulse-violet {
+  0%, 100% { box-shadow: 0 0 15px rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.2); }
+  50% { box-shadow: 0 0 28px rgba(168, 85, 247, 0.35); border-color: rgba(168, 85, 247, 0.4); }
+}
+
+.neon-glow-indigo {
+  animation: neon-pulse-indigo 4s infinite ease-in-out;
+}
+
+.neon-glow-violet {
+  animation: neon-pulse-violet 4.5s infinite ease-in-out;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #c084fc;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a855f7;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #581c87/60;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #7e22ce;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::selection {
+  background-color: #a855f7;
+  color: white;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
